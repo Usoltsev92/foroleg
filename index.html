@@ -1,0 +1,344 @@
+Вот полностью обновлённая версия. Я перенёс весь твой текст дословно, сохранив его глубину и смысл, и оформил в том же природном, архитектурном стиле. Сайт стал длиннее, но остался таким же стильным и целостным.
+
+```html
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>С Днём Рождения, Олег | Human Design</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0b0a07;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 24px;
+      color: #e8e3d5;
+      background-image: radial-gradient(ellipse at 50% 0%, #1f1b12 0%, #080705 70%);
+    }
+
+    .card {
+      max-width: 760px;
+      width: 100%;
+      background: rgba(16, 14, 10, 0.8);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(180, 140, 80, 0.2);
+      border-radius: 56px;
+      padding: 48px 44px;
+      position: relative;
+      box-shadow: 0 40px 70px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(200, 160, 70, 0.15) inset;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .sacral-glyph {
+      width: 48px;
+      height: 48px;
+      background: rgba(200, 150, 60, 0.15);
+      border: 2px solid rgba(220, 170, 70, 0.6);
+      border-radius: 14px;
+      transform: rotate(45deg);
+      margin: 0 auto 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 28px rgba(220, 160, 40, 0.25);
+    }
+
+    .sacral-glyph::after {
+      content: "⚡";
+      transform: rotate(-45deg);
+      font-size: 22px;
+      color: #e5b74c;
+      text-shadow: 0 0 12px #cc9a2c;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 58px;
+      line-height: 1.1;
+      color: #f6f1e6;
+      margin-bottom: 14px;
+      letter-spacing: -0.5px;
+    }
+
+    .name-highlight {
+      background: linear-gradient(135deg, #dba847, #f5d98b, #b5822a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 22px;
+      color: #b9aa8c;
+      margin-bottom: 40px;
+      letter-spacing: 0.3px;
+      font-weight: 400;
+    }
+
+    .design-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(30, 25, 16, 0.7);
+      border: 1px solid rgba(200, 155, 55, 0.35);
+      border-radius: 60px;
+      padding: 10px 28px;
+      margin-bottom: 36px;
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      color: #cfb377;
+      backdrop-filter: blur(10px);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .design-badge span {
+      color: #f5d48b;
+      font-weight: 600;
+    }
+
+    .info-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      margin: 34px 0 40px;
+      text-align: left;
+    }
+
+    .info-block {
+      background: rgba(255, 255, 255, 0.025);
+      border-radius: 32px;
+      padding: 28px 26px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(8px);
+    }
+
+    .block-label {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #c19b4a;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .block-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: 24px;
+      color: #f0e7d4;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .block-text {
+      font-size: 16px;
+      line-height: 1.7;
+      color: #cac1b0;
+      font-weight: 400;
+    }
+
+    .block-text strong {
+      color: #e7d29a;
+      font-weight: 600;
+    }
+
+    .block-text em {
+      color: #bfa670;
+      font-style: italic;
+    }
+
+    .channel-highlight {
+      background: linear-gradient(120deg, rgba(180, 130, 45, 0.12), rgba(220, 180, 70, 0.08));
+      border-left: 4px solid #dba847;
+      padding-left: 22px;
+      border-radius: 0 20px 20px 0;
+    }
+
+    .quote-box {
+      background: rgba(200, 160, 60, 0.06);
+      border: 1px dashed rgba(200, 155, 55, 0.4);
+      border-radius: 40px;
+      padding: 28px 30px;
+      margin: 10px 0 30px;
+      font-style: italic;
+      color: #d9cdab;
+      font-size: 18px;
+      line-height: 1.7;
+      font-family: 'Playfair Display', serif;
+      font-weight: 500;
+    }
+
+    .signature {
+      margin-top: 40px;
+      font-weight: 500;
+      font-size: 16px;
+      color: #938b7a;
+      letter-spacing: 1.5px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 34px;
+      display: inline-block;
+    }
+
+    .footer-note {
+      font-size: 13px;
+      color: #5b5548;
+      margin-top: 24px;
+      letter-spacing: 1px;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      margin: 8px 0 28px;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 36px 24px;
+        border-radius: 40px;
+      }
+      h1 {
+        font-size: 44px;
+      }
+      .block-title {
+        font-size: 20px;
+      }
+      .block-text {
+        font-size: 15px;
+      }
+      .quote-box {
+        font-size: 16px;
+        padding: 22px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="sacral-glyph"></div>
+
+    <h1>
+      С днём рождения, <span class="name-highlight">Олег</span>!
+    </h1>
+
+    <div class="subtitle">
+      чистый Генератор • твой путь глубокой мудрости
+    </div>
+
+    <div class="design-badge">
+      ✦ <span>1/3</span> Исследователь-Мученик ✦ <span>34–57</span> Архетип Выживания ✦
+    </div>
+
+    <!-- ===== РАЗДЕЛ 1: ТИП, СТРАТЕГИЯ И АВТОРИТЕТ ===== -->
+    <div class="info-grid">
+      <div class="info-block">
+        <div class="block-label">
+          🧬 Тип, Стратегия и Авторитет: Как ты устроен энергетически
+        </div>
+        <div class="block-title">
+          Чистый Генератор — твой фундамент
+        </div>
+        <div class="block-text">
+          <strong>Твой Сакральный центр — мощный генератор жизненной силы.</strong> Это означает, что ты не предназначен для того, чтобы бежать впереди паровоза и инициировать действия из ума. Твоя сила — в отклике. Представь себе мощный внедорожник: он не выбирает дорогу, но может проехать по любой, если водитель решит, куда ехать. Для тебя «водитель» — это сама жизнь, люди и ситуации, которые возникают на твоем пути.<br><br>
+          <strong>Стратегия «Ждать и откликаться» — это не пассивность.</strong> Это время, когда ты, подобно опытному охотнику, замираешь и прислушиваешься к ощущениям в теле. Твой ум может кричать «да», но если внутри пустота, сжатие или раздражение — это четкое «нет». И наоборот, когда приходит «то самое» дело или человек, твое тело буквально «гудит» энергией. Этот внутренний звук (буквально «мгм» или «не-а») и есть твой <strong>Сакральный Авторитет</strong> — твой единственный верный навигатор. Решения, принятые таким образом, никогда не приводят к выгоранию, потому что энергия на них выделяется самим Сакралом.
+        </div>
+      </div>
+
+      <!-- ===== РАЗДЕЛ 2: ПРОФИЛЬ 1/3 ===== -->
+      <div class="info-block">
+        <div class="block-label">
+          🎭 Профиль 1/3: Исследователь-Мученик. Твой личный путь
+        </div>
+        <div class="block-title">
+          Глубина, прожитая на собственном опыте
+        </div>
+        <div class="block-text">
+          Сочетание этих двух линий — самое интроспективное и самофокусированное. Твой путь — это не путь легких побед, но путь глубокой, прожитой на собственном опыте мудрости.<br><br>
+          <strong>1-я линия (Исследователь): Страх оказаться незнающим.</strong> Твоя глубинная потребность — докопаться до сути, иметь под ногами твердую основу. Ты не можешь начать действовать, пока не изучишь вопрос вдоль и поперек. Ты не из тех, кто радостно собирает мебель без инструкции. Тебе жизненно необходимо <strong>понять систему</strong>, прежде чем в нее войти. Это не слабость, а твой способ обрести безопасность. Пока фундамент не заложен, ты чувствуешь себя неуверенно.<br><br>
+          <strong>3-я линия (Мученик): Страх ошибки.</strong> Эта линия проявляется в том, что ты познаёшь мир только через практический опыт, через пробы и ошибки. Ты можешь прочитать 100 книг по плаванию, но по-настоящему научишься только когда прыгнешь в воду. И скорее всего, первый раз ты наглотаешься воды. В этом твоя уникальность: ты открываешь то, что <em>не</em> работает. Для тебя ошибка — это не провал, а ценный результат эксперимента. Ты здесь, чтобы другие поколения, глядя на тебя, могли сказать: «Спасибо, что прошел этот путь, я теперь знаю, как надо/не надо».<br><br>
+          <strong>Как это проигрывается в жизни:</strong><br>
+          Твой ум (1-я линия) может бесконечно искать идеальный момент и идеальные знания, в то время как твой внутренний экспериментатор (3-я линия) жаждет действия. Ты можешь долго и мучительно собирать информацию о новой профессии, но пока ты не начнешь в ней работать и не совершишь несколько реальных ошибок, ты не будешь чувствовать себя компетентным. Твой дар в том, что ты становишься экспертом, которому верят. Твои знания не из книг, они из жизни, из боли, из шишек. Именно эта «живость» и притягивает к тебе людей.
+        </div>
+      </div>
+
+      <!-- ===== РАЗДЕЛ 3: ЦЕНТРЫ ===== -->
+      <div class="info-block">
+        <div class="block-label">
+          🌀 Центры: Твоя внутренняя архитектура
+        </div>
+        <div class="block-title">
+          Постоянная сила и открытая мудрость
+        </div>
+        <div class="block-text">
+          <strong>Твоя постоянная сила (Определенные центры):</strong><br>
+          • <strong>Сакральный (Источник):</strong> Твоя батарейка, которая никогда не садится, если ты делаешь то, что любишь.<br>
+          • <strong>Корневой (Давление):</strong> В тебе заложено топливо, чтобы быть ключом к прогрессу и эволюции.<br>
+          • <strong>Джи (Самость):</strong> У тебя фиксированное, устойчивое чувство направления и любви. Ты можешь буквально физически ощущать, куда тебе надо, а куда нет. Это твой внутренний компас.<br><br>
+          <strong>Твоя уязвимость и мудрость (Неопределенные центры):</strong> Это твои «открытые двери», через которые ты считываешь мир.<br>
+          • <strong>Теменной + Аджна:</strong> Ты впитываешь ментальное давление и чужие идеи. У тебя гибкий ум, который может думать как угодно. Опасность здесь в том, чтобы не принять чужую мысль за свою и не начать ее доказывать. Твоя задача — не иметь фиксированной точки зрения на всё, а быть проводником для самых разных идей и выбирать сакральным откликом только те, что дают энергию.<br>
+          • <strong>Солнечное сплетение:</strong> Это твой сканер эмоционального поля. У тебя нет собственной стабильной волны, ты как эхолот улавливаешь настроение других. Если в комнате повисает напряжение, ты почувствуешь его первым, и оно может захлестнуть тебя. Избегай принятия решений и серьезных разговоров, когда ты поймал чью-то эмоциональную волну. Возьми паузу, дождись тишины, и только потом слушай свой Сакрал.<br>
+          • <strong>Селезеночный:</strong> Твоя интуитивная система непостоянна. Иногда ты можешь мгновенно считывать опасность, а иногда нет. Ты не предназначен для спонтанных, сиюминутных решений на основе интуиции, потому что она может быть ложной. Твоя безопасность — в ритме, привычках и в том, на что отозвался Сакрал.
+        </div>
+      </div>
+
+      <!-- ===== РАЗДЕЛ 4: ГЛАВНЫЙ КАНАЛ 34-57 ===== -->
+      <div class="info-block channel-highlight">
+        <div class="block-label">
+          ⚡️ Главный Канал 34-57: Архетип Выживания. Твой главный дар
+        </div>
+        <div class="block-title">
+          Исцеляющая мощь в критический момент
+        </div>
+        <div class="block-text">
+          Это канал, который соединяет твою жизненную силу (Сакрал) с интуицией настоящего момента (Селезенка) для чистого выживания и защиты.<br><br>
+          <strong>Это означает, что в кризисной ситуации тебе нет равных.</strong><br>
+          Когда всё спокойно, ты можешь раскачиваться, исследовать, сомневаться. Но в момент критической опасности или срочности включается животная смесь силы и чутья. Ты действуешь мгновенно, телом, даже не успев осознать, что произошло. Это архетип человека, который, не думая, ловит падающего ребенка или вытаскивает кого-то из огня.<br><br>
+          Более того, ты обладаешь даром «целительного слуха». Ты можешь интуитивно слышать не то, что человек говорит, а то, что стоит за словами, его истинную суть и слабость. Это делает тебя мастером, который своей силой и словом может защищать и исцелять других.<br><br>
+          <strong>Важно:</strong> В современном мире кризисы редки, и этот канал может проигрываться как «чесотка» — периодическая потребность в выбросе этой дикой энергии. Тебе жизненно необходимо находить безопасные и экологичные способы дать этому выходу: интенсивный спорт, экстремальные хобби, тяжелая физическая работа, где ты можешь проявить свою первобытную мощь. Иначе это будет рваться наружу хаотично и разрушительно.
+        </div>
+      </div>
+    </div>
+
+    <!-- ИТОГОВАЯ ЦИТАТА -->
+    <div class="quote-box">
+      Твоя жизнь — это лаборатория. Ты пришел сюда, чтобы познать на собственной шкуре, что работает, а что нет, и на этом построить нерушимую базу. Твой единственный и неповторимый путь — доверять отклику своего мощного мотора-Сакрала и не бояться ссадин от падений, потому что именно из них и рождается твоя истинная ценность для мира. Не торопи себя, не сравнивай свой путь с другими. Твой темп — самый верный для тебя.
+    </div>
+
+    <div class="signature">
+      С уважением и дружбой,<br>твой хороший друг
+    </div>
+
+    <div class="footer-note">
+      • специально для тебя •
+    </div>
+  </div>
+</body>
+</html>
+```
